@@ -36,61 +36,104 @@ NDA_DRAFTING_RULES = {
         ],
         "mutual": "Draft a broad but fair definition of 'Confidential Information', including oral disclosures. Use standard exclusions that are acceptable to both sides."
     },
-    "Use of Information": {
-        "description": "Restrictions on how the information can be used.",
+    "Third-Party" : {
+        "description": "Definition of third-party entities and their obligations.",
         "receiving": [
-            "Limit the use of Confidential Information strictly to the defined 'Purpose'.",
-            "Do not add extra obligations beyond a reasonable standard of care (i.e., the same care used for its own confidential information)."
+            "Add as is : any natural person, legal person, corporate body, non-corporate body or any other entity, not being a Party to the Agreement nor a Representative of any of the Parties",
         ],
         "disclosing": [
-            "Limit the use of Confidential Information strictly to the defined 'Purpose' and prohibit any other use. (Mandatory)",
-            "Add obligations prohibiting reverse engineering, decompiling, or unauthorized copying. (Mandatory)",
-            "Require that disclosure is limited to Representatives on a strict 'need-to-know' basis."
+            "Add as is : any natural person, legal person, corporate body, non-corporate body or any other entity, not being a Party to the Agreement nor a Representative of any of the Parties",
         ],
-        "mutual": "Draft a standard 'Permitted Use' clause limiting use to the Purpose. Include a standard of care commitment for both parties."
+        "mutual": "Add as is : any natural person, legal person, corporate body, non-corporate body or any other entity, not being a Party to the Agreement nor a Representative of any of the Parties"
+    },
+    "Permitted Use": {
+        "description": "How the information can be used by the Parties.",
+        "receiving": [
+            "Use Confidential Information only for the defined 'Purpose'.",
+            "Do not disclose Confidential Information to any third parties during and after the term of this Agreement."
+        ],
+        "disclosing": [
+            "Use Confidential Information only for the defined 'Purpose'.",
+            "Do not disclose Confidential Information to any third parties during and after the term of this Agreement."
+        ],
+        "mutual": "Both Parties agree to use Confidential Information solely for the Purpose and to protect it from unauthorized disclosure during and after the term of this Agreement."
+    },
+    # "Use of Information": {
+    #     "description": "Restrictions on how the information can be used.",
+    #     "receiving": [
+    #         "Limit the use of Confidential Information strictly to the defined 'Purpose'.",
+    #         "Do not add extra obligations beyond a reasonable standard of care (i.e., the same care used for its own confidential information)."
+    #     ],
+    #     "disclosing": [
+    #         "Limit the use of Confidential Information strictly to the defined 'Purpose' and prohibit any other use. (Mandatory)",
+    #         "Add obligations prohibiting reverse engineering, decompiling, or unauthorized copying. (Mandatory)",
+    #         "Require that disclosure is limited to Representatives on a strict 'need-to-know' basis."
+    #     ],
+    #     "mutual": "Draft a standard 'Permitted Use' clause limiting use to the Purpose. Include a standard of care commitment for both parties."
+    # },
+    "Legally Required Disclosure": {
+        "description": "What happens if the Receiving Party is legally compelled to disclose information.",
+        "receiving": [
+            "The above provisions are applicable, unless: \n",
+            "a) disclosure is required by binding law and non-disclosure could expose the Party bound by confidentiality to criminal or administrative responsibility or,\n",
+            "b) disclosure is required or indispensable to protect the Party’s interests in judicial or administrative proceedings, \n",
+            "c) in such case provided that the Parties – immediately after being informed on a possible duty or need for disclosure and as far as it will be possible prior to such disclosure - take all reasonable steps to promptly and sufficiently notify each other thereof. \n",
+        ],
+        "disclosing": [
+            "The above provisions are applicable, unless: \n",
+            "a) disclosure is required by binding law and non-disclosure could expose the Party bound by confidentiality to criminal or administrative responsibility or,\n",
+            "b) in such case provided that the Parties – immediately after being informed on a possible duty or need for disclosure and as far as it will be possible prior to such disclosure - take all reasonable steps to promptly and sufficiently notify each other thereof. \n",
+        ],
+        "mutual": [
+            "Both Parties agree to notify each other promptly if legally compelled to disclose Confidential Information, and to cooperate in seeking a protective order or other remedy."
+        ]
+    },
+    "Exclusions from Confidential Information": {
+        "description": "What is not considered confidential.",
+        "receiving": [
+            "Information that is already public knowledge at the time of disclosure or becomes public through no fault of the Receiving Party.",
+            "Information received from a third party without breach of any obligation of confidentiality.",
+            "Information already in the Receiving Party's possession before disclosure.",
+            "Information independently developed by the Receiving Party without use of or reference to the Disclosing Party's Confidential Information."
+        ],
+        "disclosing": [
+            "Information that is already public knowledge at the time of disclosure or becomes public through no fault of the Receiving Party.",
+            "Information received from a third party without breach of any obligation of confidentiality.",
+            "Information already in the Receiving Party's possession before disclosure.",
+            "Information independently developed by the Receiving Party without use of or reference to the Disclosing Party's Confidential Information."
+        ],
+        "mutual": [
+            "Information that is already public knowledge at the time of disclosure or becomes public through no fault of the Receiving Party.",
+            "Information received from a third party without breach of any obligation of confidentiality.",
+            "Information already in the Receiving Party's possession before disclosure.",
+            "Information independently developed by the Receiving Party without use of or reference to the Disclosing Party's Confidential Information."
+        ]
+    },
+    "Use of Confidential Information": {
+        "description": "How the Receiving Party can use the information.",
+        "receiving": [
+            "Each Party undertakes to keep the same standard of care in protecting such other Party’s Confidential Information as a Party normally employs to preserve and safeguard its own Confidential Information.",
+            "Confidential Information may be disclosed solely to those Representatives of a Party who have a need to know such information for the purposes of the cooperation.",
+            "All Confidential Information and any copies thereof shall be returned to the other Party promptly upon written request."
+        ],
+        "disclosing": [
+            "Each Party undertakes to keep the same standard of care in protecting such other Party’s Confidential Information as a Party normally employs to preserve and safeguard its own Confidential Information.",
+            "Confidential Information may be disclosed only to those Representatives of the Receiving Party who have a strict need to know such information solely for the purposes of the cooperation, and who are bound by confidentiality obligations no less protective than those in this Agreement.",
+            "The Receiving Party shall not reproduce, copy, or otherwise duplicate any Confidential Information without the prior written consent of the Disclosing Party.",
+            "The Receiving Party agrees to take all necessary steps to safeguard the Confidential Information from loss, theft, unauthorized access, or destruction, and to ensure its secure handling and storage.",
+            "All Confidential Information and any copies thereof shall be returned to the other Party promptly upon written request, or destroyed at the Disclosing Party's option, with a written certificate of destruction provided by the Receiving Party."
+        ],
+        "mutual": [
+            "Each Party undertakes to keep the same standard of care in protecting the other Party’s Confidential Information as it normally employs to preserve and safeguard its own Confidential Information.",
+            "Confidential Information may be disclosed only to those Representatives of the Receiving Party who have a strict need to know such information solely for the purposes of the cooperation, and who are bound by confidentiality obligations no less protective than those in this Agreement.",
+            "All Confidential Information and any copies thereof shall be returned to the other Party promptly upon written request, or destroyed at the Disclosing Party's option, with a written certificate of destruction provided by the Receiving Party."
+        ]
     },
     "Duration": {
         "description": "The term of the agreement and the survival of confidentiality obligations.",
-        "receiving": [
-            "The agreement duration should be as short as possible, preferably 6 months to 2 years.",
-            "Refuse any duration longer than 2 years. (Mandatory)",
-            "The confidentiality obligation itself should survive for a fixed, reasonable period after the agreement terminates (e.g., 2-3 years)."
-        ],
-        "disclosing": [
-            "The agreement duration should be longer, preferably > 3 years. (Mandatory)",
-            "The confidentiality obligation should survive for as long as possible, ideally indefinitely for trade secrets, or for a long fixed period (e.g., 5-10 years) for other information."
-        ],
-        "mutual": "Propose a reasonable agreement duration (e.g., 2-3 years) and a confidentiality survival period of 3-5 years post-termination."
-    },
-    "Return/Destruction of Information": {
-        "description": "Obligations at the end of the agreement.",
-        "receiving": [
-            "Agree to return or destroy information, but ensure the clause allows for retention of copies in automated backup systems and for legal/compliance purposes.",
-            "The obligation should be 'upon written request' from the Disclosing Party."
-        ],
-        "disclosing": [
-            "Mandate that the Receiving Party must, upon request, promptly return or destroy all Confidential Information.",
-            "Require the Receiving Party to provide a written certificate confirming destruction, signed by an officer. (Mandatory)"
-        ],
-        "mutual": "Draft a standard return/destroy clause, including an option for certification and acknowledging standard archival/backup exceptions."
-    },
-    "Remedies for Breach": {
-        "description": "What happens if the agreement is breached.",
-        "receiving": [
-            "Limit remedies to actual, proven monetary damages.",
-            "Reject any clauses for indemnification or payment of the other party's legal fees. (Mandatory)",
-            "Reject any mention of punitive damages. (Mandatory)"
-        ],
-        "disclosing": [
-            "State that monetary damages are inadequate and that the Disclosing Party is entitled to seek injunctive relief (a court order to stop the breach) without posting a bond. (Mandatory)",
-            "Include a clause for indemnification for any losses suffered due to a breach.",
-            "Request reimbursement of legal fees if the Disclosing Party prevails in litigation."
-        ],
-        "mutual": "Acknowledge that injunctive relief may be appropriate. Omit clauses on indemnification and legal fees, leaving it to the governing law."
-    },
-    "Governing Law and Jurisdiction": {
-        "description": "The legal framework for the contract.",
-        "instructions": "The governing law shall be [Applicable Law]. Any disputes shall be resolved through [Litigation]."
+        "instructions": ["The confidentiality obligations shall remain in effect for [Duration] months from the Effective Date. After this period, the Receiving Party's obligations regarding Confidential Information shall continue indefinitely for any information that remains confidential by its nature.\n",
+                        "All information provided by the Disclosing Party shall remain the property of the Disclosing Party. The Receiving Party agrees to return [OR to destroy] all Confidential Information to the Disclosing Party within fifteen (15) calendar days of written demand by the Disclosing Party. The risk for the Receiving Party is to remain liable too long so duration should strictly cover the time where Confidential Information will be used."
+        ]
     },
     "Responsibility": {
         "description": "Who is responsible for breaches by Representatives.",
@@ -102,9 +145,24 @@ NDA_DRAFTING_RULES = {
         ],
         "mutual": "Each Party hereto is fully liable for damages to the other Party for any harm or damage caused to the other Party or that Party’s customers or business partners due to violation of the terms of this Agreement, including for any harm or damage caused by the breaching Party’s Representatives."
     },
+    "Notices": {
+        "description": "Standard boilerplate clause for notices.",
+        "receiving": "Any notifications and statements pursuant to this Agreement shall be made in writing and sent via courier services or via registered mail to the Parties’ addresses [Party 1 Type and Address] for [Party 1 Name] and [Party 2 Type and Address] for [Party 2 Name] set forth in the heading of this Agreement or to the e-mail addresses agreed between the Parties.",
+        "disclosing": "Any notifications and statements pursuant to this Agreement shall be made in writing and sent via courier services or via registered mail to the Parties’ addresses [Party 1 Type and Address] for [Party 1 Name] and [Party 2 Type and Address] for [Party 2 Name] set forth in the heading of this Agreement or to the e-mail addresses agreed between the Parties.",
+        "mutual": "Any notifications and statements pursuant to this Agreement shall be made in writing and sent via courier services or via registered mail to the Parties’ addresses [Party 1 Type and Address] for [Party 1 Name] and [Party 2 Type and Address] for [Party 2 Name] set forth in the heading of this Agreement or to the e-mail addresses agreed between the Parties."
+    },
+
+    "Applicable Law and Jurisdiction": {
+        "description": "The legal framework for the contract.",
+        "instructions": "The governing law shall be [Applicable Law]. And should apply in any issue arising out of this Agreement."
+    },
+    "Litigation": {
+        "description": "Dispute resolution mechanism.",
+        "instructions": " Any dispute, controversy, or claim arising out of, or in relation to, this Agreement, including the validity, invalidity, breach, or termination thereof, which may not be effectively settled by negotiations, shall be resolved by arbitration in accordance with the [Litigation] in force on the date on which the Notice of Arbitration is submitted in accordance with these Rules. The number of arbitrators shall be one. The seat of the arbitration shall be [Litigation]. The arbitral proceedings shall be conducted in [Language]."
+    },
     "General Provisions": {
-        "description": "Boilerplate clauses like 'Modification', 'Entire Agreement', 'Notices'.",
-        "instructions": "Include standard boilerplate clauses for 'Entire Agreement', 'Modification', 'Applicable Law', and 'Notices'. Ensure the notice addresses are those of the parties mentioned in the preamble."
+        "description": "Boilerplate clauses like 'Modification', 'Non Solicitation', 'Non Assignable'.",
+        "instructions": "Include standard boilerplate clauses for 'Non Solicitation', 'Modification', and 'Non Assignable'."
     },
 }
 

@@ -183,7 +183,7 @@ with col2:
         )
         
         # Expander to see the prompt that was used
-        with st.expander("Show the AI Prompt sent to Gemini"):
+        with st.expander("Show the AI Prompt"):
             st.code(st.session_state.prompt, language='markdown')
     else:
         st.info("Fill out the form on the left and click 'Draft NDA' to generate the document.")
