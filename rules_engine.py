@@ -186,24 +186,36 @@ def get_role_key(party_role):
 def build_llm_prompt(user_inputs):
     """Builds a structured prompt for the LLM based on user inputs and rules."""
     
-    role_key = get_role_key(user_inputs["party_role"])
+    role_key = get_role_key(user_inputs["first_party_role"])
 
     prompt = f"""
 You are an expert legal AI assistant. Your task is to draft a complete Non-Disclosure Agreement based on the following context and specific clause-by-clause instructions.
 
 **OVERALL CONTEXT:**
 - This is a {user_inputs['nature_of_obligations']} Non-Disclosure Agreement.
-- Our Client's Role: {user_inputs['party_role']}.
-- Party 1 (Our Client): {user_inputs['client_name']}
-- Party 1 Type and Address: {user_inputs['client_type_and_address']}
-- Party 2 (Counterparty): {user_inputs['counterparty_name']}
-- Party 2 Type and Address: {user_inputs['counterparty_type_and_address']}
+
+- First Party: {user_inputs['first_party']}.
+- First Party Role: {user_inputs['first_party_role']}.
+- First Party Adress: {user_inputs['first_party_adress']}.
+- First Party Incorporation State: {user_inputs['first_party_incorporation_state']}.
+- First Party Registration Number: {user_inputs['first_party_registration_number']}.
+- First Party Representative: {user_inputs['first_party_representative']}.
+
+- Second Party: {user_inputs['second_party']}.
+- Second Party Role: {user_inputs['second_party_role']}.
+- Second Party Adress: {user_inputs['second_party_adress']}.
+- Second Party Incorporation State: {user_inputs['second_party_incorporation_state']}.
+- Second Party Registration Number: {user_inputs['second_party_registration_number']}.
+- Second Party Representative: {user_inputs['second_party_representative']}.
+
+- Purpose of Disclosure Type: {user_inputs['purpose_type']}
 - Purpose of Disclosure: {user_inputs['purpose']}
 - Applicable Law: {user_inputs['applicable_law']}
 - Dispute Resolution (Litigation): {user_inputs['litigation']}
 - Duration of Confidentiality: {user_inputs['duration']} months
 - Language of the Contract: {user_inputs['language']}
 - Effective Date: {user_inputs.get('effective_date', 'Today')}
+
 **DRAFTING INSTRUCTIONS - CLAUSE BY CLAUSE:**
 
 """
@@ -233,12 +245,12 @@ You are an expert legal AI assistant. Your task is to draft a complete Non-Discl
     prompt += GENERAL_DRAFTING_INSTRUCTIONS
 
     # Replace placeholders in the prompt itself
-    prompt = prompt.replace("[Party 1 Name]", user_inputs['client_name'])
-    prompt = prompt.replace("[Party 2 Name]", user_inputs['counterparty_name'])
-    prompt = prompt.replace("[Party 1 Type and Address]", user_inputs['client_type_and_address'])
-    prompt = prompt.replace("[Party 2 Type and Address]", user_inputs['counterparty_type_and_address'])
-    prompt = prompt.replace("[Effective Date]", str(user_inputs.get('effective_date', 'Today')))
-    prompt = prompt.replace("[Party 1 Role]", user_inputs['party_role'])
+    prompt = prompt.replace("[Party 1 Name]", user_inputs['first_party'])
+    prompt = prompt.replace("[Party 2 Name]", user_inputs['second_party'])
+    prompt = prompt.replace("[Party 1 Type and Address]", user_inputs['first_party_adress'])
+    prompt = prompt.replace("[Party 2 Type and Address]", user_inputs['second_party_adress'])
+    prompt = prompt.replace("[Effective Date]", str(user_inputs.get('date', 'Today')))
+    prompt = prompt.replace("[Party 1 Role]", user_inputs['first_party_role'])
     prompt = prompt.replace("[Nature of Obligations]", user_inputs['nature_of_obligations'])
     prompt = prompt.replace("[Language]", user_inputs['language'])
     prompt = prompt.replace("[Duration]", str(user_inputs['duration']))
