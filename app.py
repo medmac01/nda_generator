@@ -5,11 +5,13 @@ import google.generativeai as genai
 from docx import Document
 from io import BytesIO
 from rules_engine import build_llm_prompt
+from j2_engine import render_template
 import datetime
+
 
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
-    page_title="PoC NDA Generator (Gemini)",
+    page_title="PoC NDA Generator",
     page_icon="✍️",
     layout="wide"
 )
@@ -195,14 +197,14 @@ submitted = st.button("Draft NDA", type="primary", use_container_width=True)
 if submitted:
     user_inputs = {
         "first_party": first_party,
-        "first_party_adress": first_party_adress,
+        "first_party_address": first_party_adress,
         "first_party_incorporation_state": first_party_incorporation_state,
         "first_party_representative": first_party_representative,
         "first_party_registration_number": first_party_registration_number,
         "first_party_role": first_party_role,
 
         "second_party": second_party,
-        "second_party_adress": second_party_adress,
+        "second_party_address": second_party_adress,
         "second_party_incorporation_state": second_party_incorporation_state,
         "second_party_representative": second_party_representative,
         "second_party_registration_number": second_party_registration_number,
@@ -219,10 +221,11 @@ if submitted:
     }
     
     # Build the prompt (No changes needed in rules_engine.py)
-    st.session_state.prompt = build_llm_prompt(user_inputs)
+    # st.session_state.prompt = build_llm_prompt(user_inputs)
     
     # Generate the contract using the new Gemini function
-    generated_text = generate_contract_from_prompt(st.session_state.prompt)
+    # generated_text = generate_contract_from_prompt(st.session_state.prompt)
+    generated_text = render_template(user_inputs)
     if generated_text:
         st.session_state.nda_text = generated_text
 
