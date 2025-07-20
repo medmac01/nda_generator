@@ -4,7 +4,13 @@
 NDA_DRAFTING_RULES = {
     "Preamble and Parties": {
         "description": "The introductory section identifying the parties and effective date.",
-        "instructions": "Draft a standard preamble for a Non-Disclosure Agreement between [Party 1 Name], [Party 1 Type and Address], and [Party 2 Name], [Party 2 Type and Address]. The effective date should be [Effective Date]. Clearly identify which party is the Disclosing Party and which is the Receiving Party based on the user's role selection. If it's a bilateral agreement, state that both parties will act as Disclosing and Receiving Parties."
+        # "instructions": "Draft a standard preamble for a Non-Disclosure Agreement between [Party 1 Name], [Party 1 Type and Address], and [Party 2 Name], [Party 2 Type and Address]. The effective date should be [Effective Date]. Clearly identify which party is the Disclosing Party and which is the Receiving Party based on the user's role selection. If it's a bilateral agreement, state that both parties will act as Disclosing and Receiving Parties.",
+        "instructions": [
+            "This Non-Disclosure Agreement (the \"Agreement\") is entered into as of [Effective Date] (the \"Effective Date\"), between\n",
+            "[Party 1 Name], a public limited liability company duly organized and existing under the laws of Morocco, with a share capital of [Capital], having its registered office at [First Party Address], incorporated with the Register of Companies of Casablanca under number [First Party Registration Number], represented by [First Party Representative], duly empowered (hereinafter referred to as the 'Disclosing Party');\n And,\n",
+            "[Party 2 Name], a public limited liability company duly organized and existing under the laws of Morocco, with a share capital of [Capital], having its registered office at [Second Party Address], incorporated with the Register of Companies of Benguerir under number [Second Party Registration Number], represented by [Second Party Representative], duly empowered (hereinafter referred to as the 'Receiving Party');\n\n",
+            "The Disclosing Party and the Receiving Party are hereinafter collectively referred to as the \"Parties\" and individually as a \"Party\".\n",
+        ]
     },
     "Purpose": {
         "description": "The 'Whereas' or 'Background' clause.",
@@ -196,7 +202,7 @@ You are an expert legal AI assistant. Your task is to draft a complete Non-Discl
 
 - First Party: {user_inputs['first_party']}.
 - First Party Role: {user_inputs['first_party_role']}.
-- First Party Adress: {user_inputs['first_party_adress']}.
+- First Party Address: {user_inputs['first_party_address']}.
 - First Party Incorporation State: {user_inputs['first_party_incorporation_state']}.
 - First Party Registration Number: {user_inputs['first_party_registration_number']}.
 - First Party Representative: {user_inputs['first_party_representative']}.
